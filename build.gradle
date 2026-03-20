@@ -17,7 +17,21 @@ javafx {
 
 test {
   useJUnitPlatform()
+  finalizedBy jacocoTestReport
 }
+
+// Configuration de la vérification du taux de couverture
+jacocoTestCoverageVerification {
+  violationRules {
+    rule {
+      limit {
+        minimum = 0.5
+      }
+    }
+  }
+}
+
+check.dependsOn jacocoTestCoverageVerification
 
 dependencies {
   implementation 'com.google.code.gson:gson:2.10'
