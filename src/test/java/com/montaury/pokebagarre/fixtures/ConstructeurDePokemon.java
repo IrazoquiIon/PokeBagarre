@@ -4,6 +4,7 @@ import com.montaury.pokebagarre.metier.Pokemon;
 import com.montaury.pokebagarre.metier.Stats;
 
 public class ConstructeurDePokemon {
+  private String nom = "Nom";
   private int attaque;
   private int defense;
 
@@ -21,7 +22,12 @@ public class ConstructeurDePokemon {
     return this;
   }
 
+  public ConstructeurDePokemon avecNom(String nom) {
+    this.nom = nom;
+    return this;
+  }
+
   public Pokemon construire() {
-    return new Pokemon("Nom", "", new Stats(attaque, defense));
+    return new Pokemon(nom, "", new Stats(attaque, defense));
   }
 }
